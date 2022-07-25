@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+      
+  <style>
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+      }
+      
+      /* Style the buttons inside the tab */
+      .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+      }
+      .tab button:hover {
+        background-color: #ddd;
+      }
+      
+      /* Create an active/current tablink class */
+      .tab button.active {
+        background-color:#ccc;
+      }
+      
+      /* Style the tab content */
+      .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: 1;
+      }
+</style> 
+</head>
+<body class="main">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="images/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index1.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">3</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="images/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Brad Diesel
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Call me whenever you can...</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="images/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  John Pierce
+                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">I got your message bro</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="images/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Nora Silvester
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">The subject goes here</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="max-width:30%">
+    <!-- Brand Logo -->
+    <a href="index1.html" class="brand-link">
+      <img src="images/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">HOME</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <a href="profile.html " class="d-block">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="images/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          Admin</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>WEBSITE</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="AdminSide.html" class="nav-link" target="main">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+               USERS
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="tasks.html" class="nav-link" target="main">
+              <i class="nav-icon fas fa-tasks"></i>
+              <p>
+               Assign Tasks
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="addFAQs.html" class="nav-link" target="main">
+              <i class="nav-icon fas fa-plus"></i>
+              <p>
+               Add FAQs
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Sections
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="update.html" class="nav-link">
+                  <p>Portal</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="update.html" class="nav-link">
+                  <p>Elearning</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="update.html" class="nav-link">
+                  <p>Staff</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="update.html" class="nav-link">
+                  <p>library</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="new-section.html" class="nav-link">
+                  <p>Add New Section</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="calendar.html" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Schedules
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+<!---------------------------------------main container------------------>
+<div class="content-wrapper">
+  <div class="main-xl border bg-light" style="margin-top:5%;">
+    <div class="container center border" style="width:90%;">
+     <div class="row">
+        <div class="col-sm-6">
+          
+          <div class="card">
+            <div class="card-head bg-gradient-light "><legend  class="text-center" style="font-weight:bolder;font-size:20px"> Edit POSTS</legend></div>
+            <form method="post" action="">
+                <fieldset style="padding:10px;">
+                  
+                    Enter the heading:<br>
+                    <input type="text" name="Heading" style="width:100%"><br>
+             
+                    <div class="form-group" name="text">
+                        <label>  Input some text:</label>
+                        <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                    </div> 
+                    
+                    Upload a file:
+                      <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="exampleInputFile">
+                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text">Upload</span>
+                          </div>
+                        </div>
+                     </div>
+                </fieldset>
+        
+              </form>
+          </div>
+        </div>
+        <div class="col-sm-6 overflow-auto" style="padding-left:5px;">
+         <div class="text-center bg-gradient-green border" style="width:100%; margin-bottom:2px;font-weight:bolder;font-size:20px"> <span class="card-head border-1 " style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:20px;"> USERS</span></div>
+           <div class="card border" style="width:100%;">
+            <div class="tab-sm-4 text-center border">
+                <button class="tablinks bg-success" onclick="openBtn(event,'tab1')">Add new user</button>
+                <button class="tablinks bg-danger" onclick="openBtn(event,'tab2')">Delete user</button>
+                <button class="tablinks bg-primary" onclick="openBtn(event,'tab3')">Edit User..</button>
+                <button class="tablinks bg-gradient-lightblue " onclick="openBtn(event,'tab4')">Add User roles</button>
+            </div>
+            <form id="tab1"class="tabcontent overflow-auto " method="post" action="" >
+                <fieldset class="center" style="width:100%;margin-left:20px; max-height:290px;">
+                    <legend class="center bg-primary" style="width:90%;">USERS</legend>
+                    <button class="tablink" onclick="opeTab(event,'tab1')">Add a new user</button><br>
+                    Enter First Name:<br>
+                    <input type="text" name="firstname" style="width:90%;"><br>
+                    Enter Second name:<br>
+                    <input type="text" name="secondname" style="width:90%"><br>
+                    Enter Email adress:<br>
+                    <input type="email" name= "email"  style="width:90%;"><br>
+                    Enter Age:<br>
+                    <input type="text" name="age"><br>
+                    Enter date of birth:<br>
+                    <input type="date" name="dob"><br>
+                    Enter password:<br>
+                    <input type="password" name="password"style="width:90%;"> <br>
+                    Comfirm password:<br>
+                    <input type="password" name="password2"style="width:90%;"><br>
+                    Gender:<br>
+                    <select>
+                        <option name="male">Male</option>
+                        <option name="female">Female</option>
+                        <option name="other">Other</option>
+                    </select> <br><br>
+                    <input type="submit" name="submit" value="ADD USER"><br><br>
+                </fieldset>
+            </form>
+            <form id="tab2" class="tabcontent" method="post" action="">
+                <fieldset class="center" style="width:100%;margin-left:20px;">
+                    <legend class="center bg-danger" style="width:90%;">Delete a user</legend><br>
+                    Enter First Name:<br>
+                    <input type="text" name="firstname" style="width:90%;"><br>
+                    Enter Second name:<br>
+                    <input type="text" name="secondname" style="width:90%"><br>
+                    Enter Email adress:<br>
+                    <input type="email" name= "email"  style="width:90%;"><br><br>
+                    <input type="submit" name="submit" value="DELETE" class="bg-danger">
+                </fieldset>
+            </form>
+            <form id="tab3"class="tabcontent overflow-auto" method="post" action="">
+                <fieldset class="center" style="width:100%;margin-left:20px; max-height:290px;">
+                    <legend class="center bg-primary" style="width:90%;">Edit user Details</legend><br>
+                    Enter First Name:<br>
+                    <input type="text" name="firstname" style="width:90%;"><br>
+                    Enter Second name:<br>
+                    <input type="text" name="secondname" style="width:90%"><br>
+                    Upload a file:<br>
+                    <div class="form-group" style="width:90%;">
+                        <label for="exampleInputFile">File input</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="exampleInputFile">
+                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text">Upload</span>
+                          </div>
+                        </div><br>
+                    <a href="#" class="unstyled"><button>Send a message</button></a><br><br>
+                    <input type="submit" name="add" value="add"><br><br>
+                </fieldset>
+            </form>
+            <form id="tab4"class="tabcontent" method="post" action="">
+                <fieldset class="center" style="width:100%;margin-left:20px;">
+                    <legend class="center bg-gradient-lightblue overflow-auto " style="width:90%;max-height:290px;">Assign user roles</legend><br>
+                    Enter First Name:<br>
+                    <input type="text" name="firstname" style="width:90%;"><br>
+                    Enter Second name:<br>
+                    <input type="text" name="secondname" style="width:90%"><br>
+                    Enter Email:<br>
+                    <input type="email" name="email" style="width:90%;"><br><br>
+                    <select style="width:80%;">
+                       <option name="student">student</option>
+                        <option name="netwoking">netwoking</option>
+                        <option name="admin">admin</option>
+                       <option name="lecturer">lecturer</option>
+                       <option name="admin">admin</option>
+                       <option name="alumni">alumni</option>
+                       <option name="staff">staff</option>
+                       <option name="other">other</option> 
+                    </select><br><br>
+                    <input class="center" type="submit" name="submit" value="SUBMIT"> <br><br>
+                    
+                </fieldset>
+            </form>
+         </div>
+     </div>
+    </div>
+    <div class=" overflow-auto container bg-gray-light border">
+      <div class="row border">
+      <div class="center text-center" style="background: rgb(144, 218, 175) ; margin-top:2px; margin-left:5px; margin-bottom:2px; max-height:30px; width:99%;">       <span class="text-center" style="font-weight:bolder;font-size:20px">PORTAL</span></div>
+        <div class="col-sm-6 ">
+          <div class="card text-center bg-light">
+              <div class="card-head bg-gradient-green" style="font-weight:bolder;font-size:20px;">View users:</div> <br>
+              <form method="post" action ="">
+                <input type="submit" name = "DISPLAY">
+              </form>
+
+          </div>
+        </div>
+        <div class="col-sm-6 border-2">
+          <div class="card border-1 bg-light">
+            <div class="card-head bg-gradient-success text-center border-bottom"> Edit Portal details</div>
+              <div class="tab-sm-3 text-center" style="justify-content:space-between;">
+                <button class="tablinks bg-success" onclick="openBtn(event,'tab0')" style="width:150px;">Add user</button>
+                <button class="tablinks bg-danger" onclick="openBtn(event,'tab')">Change password</button>
+                <a href="login.html" target="_blank"> <button  class="tablinks bg-success" style="width:150px;">login</button></a>
+             </div>
+          <form id="tab0"class="tabcontent overflow-auto " method="post" action="" >
+              <fieldset class="center" style="width:100%;margin-left:20px; max-height:300px;">
+                  <legend class="center bg-primary" style="width:90%;">USERS</legend>
+                  <button class="tablink" onclick="opeTab(event,'tab1')">Add a new user</button><br>
+                  Enter First Name:<br>
+                  <input type="text" name="firstname" style="width:90%;"><br>
+                  Enter Second name:<br>
+                  <input type="text" name="secondname" style="width:90%"><br>
+                  Enter Email adress:<br>
+                  <input type="email" name= "email"  style="width:90%;"><br>
+                  Enter Age:<br>
+                  <input type="text" name="age"><br>
+                  Enter date of birth:<br>
+                  <input type="date" name="dob"><br>
+                  Enter password:<br>
+                  <input type="password" name="password"style="width:90%;"> <br>
+                  Comfirm password:<br>
+                  <input type="password" name="password2"style="width:90%;"><br>
+                  Gender:<br>
+                  <select>
+                      <option name="male">Male</option>
+                      <option name="female">Female</option>
+                      <option name="other">Other</option>
+                  </select> <br><br>
+                  <input type="submit" name="submit" value="ADD USER"><br><br>
+              </fieldset>
+          </form>
+          <form id="tab" class="tabcontent overflow-auto" method="post" action="">
+              <fieldset class="center" style="width:100%;margin-left:20px; max-height:300px;">
+                  <legend class="center bg-danger" style="width:90%;">Change user password</legend><br>
+                  Enter First Name:<br>
+                  <input type="text" name="firstname" style="width:90%;"><br>
+                  Enter Second name:<br>
+                  <input type="text" name="secondname" style="width:90%"><br>
+                  Enter old password:<br>
+                  <input type="password" name= "password"  style="width:90%;"><br><br>
+                  Enter new password:<br>
+                  <input type="password" name="newpass"><br>
+                  Repeat password:<br>
+                  <input type="password" name="newpass2"><br><br>
+                  <input type="submit" name="submit" value="Submit" class="bg-success">
+              </fieldset>
+          </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!------------------end body-->
+<!-------------------------footer------------------------>
+<div class="container border bg-light" style="max-height:200px;"> 
+  <div class="card text-center"> 
+    <p>Privacy and policy </p>
+  </div>
+</div>
+<!---------------------end footer ---------------------->
+<!-------------------------------------------------scripts-------------------------------------->
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/hjs/pages/dashboard.js"></script>
+<script src="test.js"></script>
+</body>
+</body>
+</html>
