@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Add user Roles</title>
+  <title>Admin |Tasks </title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -23,45 +23,21 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
-      
   <style>
-    .tab {
-        overflow: hidden;
-        border: 1px solid #ccc;
-        background-color: #f1f1f1;
-      }
-      
-      /* Style the buttons inside the tab */
-      .tab button {
-        background-color: inherit;
-        float: left;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 14px 16px;
-        transition: 0.3s;
-        font-size: 17px;
-      }
-      .tab button:hover {
-        background-color: #ddd;
-      }
-      
-      /* Create an active/current tablink class */
-      .tab button.active {
-        background-color:#ccc;
-      }
-      
-      /* Style the tab content */
-      .tabcontent {
-        display: none;
-        padding: 6px 12px;
-        border: 1px solid #ccc;
-        border-top: 1;
-      }
-</style> 
+    .file {
+      visibility: hidden;
+      position: absolute;
+    }
+    .card{ 
+        margin-left: 4%;
+        width:100%;
+        margin-right: 4%;
+
+    }
+  </style>
 </head>
 <body class="main">
-<div class="wrapper">
+ <div class="wrapper">
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
@@ -207,17 +183,17 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4" >
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index1.html" class="brand-link">
-      <img src="images/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">HOME</span>
-    </a>
+       <a href="index1.html" class="brand-link">
+        <img src="images/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">HOME</span>
+      </a>
 
     <!-- Sidebar -->
-    <div class="sidebar">
+       <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <a href="profile.html " class="d-block">
+      <a href="# " class="d-block">
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="images/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
@@ -225,7 +201,7 @@
         <div class="info">
           Admin</a>
         </div>
-      </div>
+       </div>
 
       <!-- SidebarSearch Form -->
       <div class="form-inline">
@@ -286,7 +262,6 @@
               </p>
             </a>
           </li>
-
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
@@ -317,7 +292,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="new-section.html" class="nav-link">
+                <a href="" class="nav-link">
                   <p>Add New Section</p>
                 </a>
               </li>
@@ -340,159 +315,75 @@
               </p>
             </a>
           </li>
+
         </ul>
       </nav>
     </div>
     <!-- /.sidebar -->
   </aside>
-<!---------------------------------------main container------------------>
-<div class="content-wrapper">
-  <div class="main-xl border bg-light" style="margin-top:5%;">
-    <div class="container center border" style="width:90%;">
-     <div class="row">
-        <div class="col-sm-12 overflow-auto" style="padding-left:5px;">
-         <div class="text-center bg-gradient-green border" style="width:100%; margin-bottom:2px;font-weight:bolder;font-size:20px"> <span class="card-head border-1 " style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:20px;"> USERS</span></div>
-           <div class="card border" style="width:100%;">
-            <div class="tab-sm-4  border" style="justify-content:space-evenly;">
-                <button class="tablinks btn btn-success " onclick="openBtn(event,'tab1')">Add new user</button>
-                <button class="tablinks btn btn-danger" onclick="openBtn(event,'tab2')">Delete user</button>
-                <button class="tablinks btn btn-primary" onclick="openBtn(event,'tab3')">Edit User..</button>
-                <button class="tablinks btn btn-success " onclick="openBtn(event,'tab4')">Add User roles</button>
-            </div>
-            <form id="tab1"class="tabcontent overflow-auto " method="post" action="" >
-                <fieldset class="center" style="width:100%;margin-left:20px; max-height:290px;">
-                    <legend class="center bg-primary" style="width:90%;">USERS</legend>
-                    <button class="tablink" onclick="opeTab(event,'tab1')">Add a new user</button><br>
-                    Enter First Name:<br>
-                    <input type="text" name="firstname" style="width:90%;"><br>
-                    Enter Second name:<br>
-                    <input type="text" name="secondname" style="width:90%"><br>
-                    Enter Email adress:<br>
-                    <input type="email" name= "email"  style="width:90%;"><br>
-                    Enter Age:<br>
-                    <input type="text" name="age"  style="width:90%;"><br>
-                    Enter date of birth:<br>
-                    <input type="date" name="dob" style="width:90%;"><br>
-                    Enter password:<br>
-                    <input type="password" name="password"style="width:90%;"> <br>
-                    Comfirm password:<br>
-                    <input type="password" name="password2"style="width:90%;"><br>
-                    Gender:<br>
-                    <select>
-                        <option name="male">Male</option>
-                        <option name="female">Female</option>
-                        <option name="other">Other</option>
-                    </select> <br><br>
-                    <input class=" btn btn-success"type="submit" name="submit" value="ADD USER"><br><br>
-                </fieldset>
-            </form>
-            <form id="tab2" class="tabcontent" method="post" action="">
-                <fieldset class="center" style="width:100%;margin-left:20px;">
-                    <legend class="center bg-danger" style="width:90%;">Delete a user</legend><br>
-                    Enter First Name:<br>
-                    <input type="text" name="firstname" style="width:90%;"><br>
-                    Enter Second name:<br>
-                    <input type="text" name="secondname" style="width:90%"><br>
-                    Enter Email adress:<br>
-                    <input type="email" name= "email"  style="width:90%;"><br><br>
-                    <input type="submit" name="submit" value="DELETE" class="bg-danger">
-                </fieldset>
-            </form>
-            <form id="tab3"class="tabcontent overflow-auto" method="post" action="">
-                <fieldset class="center" style="width:100%;margin-left:20px; max-height:290px;">
-                    <legend class="center bg-primary" style="width:90%;">Edit user Details</legend><br>
-                    Enter First Name:<br>
-                    <input type="text" name="firstname" style="width:90%;"><br>
-                    Enter Second name:<br>
-                    <input type="text" name="secondname" style="width:90%"><br>
-                    Upload a file:<br>
-                    <div class="form-group" style="width:90%;">
-                        <label for="exampleInputFile">File input</label>
-                        <div class="input-group">
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="exampleInputFile">
-                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                          </div>
-                          <div class="input-group-append">
-                            <span class="input-group-text">Upload</span>
-                          </div>
-                        </div><br>
-                    <a href="#" class="unstyled"><button>Send a message</button></a><br><br>
-                    <input type="submit" name="add" value="add"><br><br>
-                </fieldset>
-            </form>
-            <form id="tab4"class="tabcontent" method="post" action="">
-                <fieldset class="center" style="width:100%;margin-left:20px;">
-                    <legend class="center bg-gradient-lightblue overflow-auto " style="width:90%;max-height:290px;">Assign user roles</legend><br>
-                    Enter First Name:<br>
-                    <input type="text" name="firstname" style="width:90%;"><br>
-                    Enter Second name:<br>
-                    <input type="text" name="secondname" style="width:90%"><br>
-                    Enter Email:<br>
-                    <input type="email" name="email" style="width:90%;"><br><br>
-                    <select style="width:80%;">
-                       <option name="student">student</option>
-                        <option name="netwoking">netwoking</option>
-                        <option name="admin">admin</option>
-                       <option name="lecturer">lecturer</option>
-                       <option name="admin">admin</option>
-                       <option name="alumni">alumni</option>
-                       <option name="staff">staff</option>
-                       <option name="other">other</option> 
-                    </select><br><br>
-                    <input class="center" type="submit" name="submit" value="SUBMIT"> <br><br>
-                    
-                </fieldset>
-            </form>
-         </div>
-     </div>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard </li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
     </div>
-    <div class=" overflow-auto container bg-gray-light border" style="margin-top:5%;">
-        <div class="col-sm-12 border" >
-          <div class="card border-1 bg-light">
-          <div class="card-head bg-light text-center border-bottom"> Edit Portal details</div>
-            <form class=" overflow-auto" method="post" action="">
-              <fieldset class="center" style="width:90%;margin-left:20px; ">
-                  <legend class="center bg-danger" style="width:90%;">Change user password</legend><br>
-                  Enter First Name:<br>
-                  <input type="text" name="firstname" style="width:90%;"><br>
-                  Enter Second name:<br>
-                  <input type="text" name="secondname" style="width:90%"><br>
-                  Enter old password:<br>
-                  <input type="password" name= "password"  style="width:90%;"><br><br>
-                  Enter new password:<br>
-                  <input type="password" name="newpass" style="width:90%;"><br>
-                  Repeat password:<br>
-                  <input type="password" name="newpass2" style="width:90%;"><br><br>
-                  <input type="submit" name="submit" value="Submit" class="bg-success"style="margin-left:50%;"><br><br>
-              </fieldset>
-           </form>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="main " style="width:98%;" >
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card" style="width:95%; margin-left:2%;">
+                <div class="card-header bg-gradient-blue text-center"> Assign a Task</div>
+                <form method="post" action ="" style="margin-top:5%;">
+                    <div class="form-group">
+                        Task Id:
+                        <input class="form-control" type="text" name="taskId">
+                    </div>
+                    <div class="form-group">
+                        Task description/Title:
+                        <input class="form-control" type="text" name="taskDescription">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="assign" value="DELETE" class="btn btn-danger" style="float:right; margin-right:5%; margin-bottom:20px;">
+                    </div>
+                </form>
+            </div>
           </div>
         </div>
-
-      </div>
+    
     </div>
   </div>
-</div>
-<div class="card"  >
-  <p class="text-center"><i>Thankyou for using </i><span style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Chuka university  HELPDESK</span></p>
-</div>
-<!------------------end body-->
-<!-------------------------footer------------------------>
 
-<footer class="main-footer">
-  <div class="float-right d-none d-sm-block">
-    <b>Version</b> 1.0.1
-  </div>
-  <strong>Copyright &copy; 2022 Release Chuka University <a href="https://cu.ac.ke">Helpdesk</a>.</strong> All rights reserved.
-</footer>
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark" style="height:48%">
-    <!-- Control sidebar content goes here -->
-  </aside>
+  <div class="card"  >
+    <p class="text-center"><i>Thankyou for using </i><span style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Chuka university  HELPDESK</span></p>
+</div>
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 1.0.1
+    </div>
+    <strong>Copyright &copy; 2022 Release Chuka University <a href="https://cu.ac.ke">Helpdesk</a>.</strong> All rights reserved.
+  </footer>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark"style="height:48%">
+      <!-- Control sidebar content goes here -->
+    </aside>
+</div>
 
-<!---------------------end footer ---------------------->
-<!-------------------------------------------------scripts-------------------------------------->
+
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -517,17 +408,16 @@
 <script src="plugins/daterangepicker/daterangepicker.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
+<!-- Summernote js -->
 <script src="plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
+<!-- js App admin-->
 <script src="js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
+<!--  for demo purposes -->
 <script src="js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/hjs/pages/dashboard.js"></script>
+
+<script src="js/pages/dashboard.js"></script>
 <script src="test.js"></script>
-</body>
 </body>
 </html>
